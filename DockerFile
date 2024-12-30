@@ -1,0 +1,11 @@
+# Use the Nginx base image
+FROM nginx:alpine
+
+# Copy the static HTML file into the container
+COPY index.html /usr/share/nginx/html/index.html
+
+# Expose port 80 to allow access to the web page
+EXPOSE 80
+
+# Command to run Nginx
+CMD ["nginx", "-g", "daemon off;"]
